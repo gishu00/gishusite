@@ -1,0 +1,242 @@
+/* 폰트 불러오기 (눈누 둥근모꼴 - 레트로 픽셀 느낌) */
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DungGeunMo', sans-serif; /* 폰트 적용 */
+    /* 배경 이미지 설정 (실제 이미지 경로로 변경 필요) */
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+    background-size: cover;
+    color: #5D4037; /* 기본 글자색 (진한 갈색톤) */
+    height: 100vh;
+    overflow: hidden; /* 스크롤바 숨김 */
+}
+
+/* 레이아웃 컨테이너 */
+.container {
+    display: flex;
+    height: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* 1. 왼쪽 사이드바 메뉴 */
+.sidebar {
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.5); /* 반투명 흰색 배경 */
+    border-radius: 15px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px); /* 배경 블러 효과 */
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+}
+
+.sidebar li {
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar a {
+    color: #8D6E63;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    color: #FF7043; /* 포인트 색상 (주황) */
+    transform: scale(1.1);
+}
+
+.sidebar .bottom-menu {
+    margin-top: auto; /* 맨 아래로 밀기 */
+}
+
+
+/* 2. 메인 콘텐츠 영역 */
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative; /* 캐릭터 배치를 위해 */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 공통 박스 스타일 */
+.box {
+    background-color: rgba(255, 240, 230, 0.6); /* 따뜻한 반투명 배경색 */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+/* 상단 공지 박스 */
+.notice-box {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+/* 메인 2단 레이아웃 */
+.main-layout {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+.column-left { flex: 1.2; display: flex; flex-direction: column; gap: 20px; }
+.column-right { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+
+/* --- 왼쪽 열 박스들 --- */
+
+/* 프로필 박스 */
+.profile-box {
+    text-align: center;
+}
+
+.music-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #8D6E63;
+    font-size: 0.9rem;
+}
+.music-player i { color: #FF7043; }
+
+.profile-text {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.banner-img img {
+    width: 100%;
+    height: auto;
+    border: 3px double #FFAB91;
+    margin-bottom: 5px;
+}
+.banner-url {
+    font-size: 0.7rem;
+    color: #A1887F;
+}
+
+/* D-day 박스 */
+.dday-box {
+    text-align: center;
+    background-color: rgba(255, 240, 230, 0.8); /* 조금 더 불투명하게 */
+}
+.dday-box p:first-child { font-size: 1.1rem; margin-bottom: 10px; }
+.heart { color: #FF5252; font-size: 1.2rem; }
+.days {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF7043;
+}
+.days span { font-size: 1rem; color: #8D6E63; }
+
+
+/* --- 오른쪽 열 박스들 --- */
+
+/* 최신 글 목록 박스 */
+.board-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #6D4C41;
+}
+.post-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.post-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted rgba(141, 110, 99, 0.3);
+    cursor: pointer;
+}
+.post-list li:hover { color: #FF7043; }
+.post-title i { margin-right: 5px; font-size: 0.8rem; }
+.post-date { font-size: 0.8rem; color: #A1887F; }
+
+/* 우측 배너 모음 박스 */
+.side-banners {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent; /* 배경 투명하게 */
+    box-shadow: none; border: none; backdrop-filter: none; padding: 0;
+}
+.side-banners img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.side-banners img:hover { transform: scale(1.05); }
+
+
+/* 하단 캐릭터 장식 */
+.character-deco {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    pointer-events: none; /* 클릭 방지 */
+}
+.character-deco img {
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+}
+.char-1 { transform: rotate(-10deg); }
+.char-2 { transform: rotate(10deg) translateY(10px); }
+
+/* 반응형 처리 (화면이 작아질 때) */
+@media (max-width: 768px) {
+    .container { flex-direction: column; padding: 10px; overflow-y: auto; }
+    body { overflow: auto; height: auto; }
+    .sidebar { width: 100%; flex-direction: row; justify-content: center; padding: 10px; }
+    .sidebar ul { flex-direction: row; gap: 20px; }
+    .sidebar .bottom-menu { margin-top: 0; margin-left: auto; }
+    
+    .main-layout { flex-direction: column; }
+    .character-deco { position: static; transform: none; justify-content: center; margin-top: 20px; }
+}
